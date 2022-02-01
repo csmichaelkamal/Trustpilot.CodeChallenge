@@ -2,11 +2,11 @@
 
 ## Selected Challenge is Pony Challenge
 
-Challenge URL [https://ponychallenge.trustpilot.com/index.html]
+[Challenge URL](https://ponychallenge.trustpilot.com/index.html)
 
 Pony Valid Names:
 
-Reference [https://mylittlepony.hasbro.com/en-us/characters/ponies]
+[Reference] (https://mylittlepony.hasbro.com/en-us/characters/ponies)
 
 |# |Pont Valid Name		|
 |--|--------------------|
