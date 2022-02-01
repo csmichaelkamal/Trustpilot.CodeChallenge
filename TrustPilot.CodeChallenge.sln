@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrustPilot.CodeChallenge.API", "TrustPilot.CodeChallenge.API\TrustPilot.CodeChallenge.API.csproj", "{76F42F5D-6CE5-42CA-84B0-88DFF00CFD48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{D960A707-6381-49CA-9D32-E290883A63EB}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76F42F5D-6CE5-42CA-84B0-88DFF00CFD48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F42F5D-6CE5-42CA-84B0-88DFF00CFD48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F42F5D-6CE5-42CA-84B0-88DFF00CFD48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F42F5D-6CE5-42CA-84B0-88DFF00CFD48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C50C6D0F-3749-4DAE-BDFD-3944A36577CA}
+	EndGlobalSection
+EndGlobal
