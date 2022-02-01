@@ -6,7 +6,7 @@
 
 Pony Valid Names:
 
-[Reference] (https://mylittlepony.hasbro.com/en-us/characters/ponies)
+[Reference](https://mylittlepony.hasbro.com/en-us/characters/ponies)
 
 |# |Pont Valid Name		|
 |--|--------------------|
