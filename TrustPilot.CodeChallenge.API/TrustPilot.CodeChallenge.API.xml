@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TrustPilot.CodeChallenge.API</name>
+    </assembly>
+    <members>
+        <member name="T:TrustPilot.CodeChallenge.API.Constants.MazeDimensions">
+            <summary>
+            Maze Dimentions, it should be between 15 and 25 for both Height and Width
+            </summary>
+        </member>
+        <member name="P:TrustPilot.CodeChallenge.API.Constants.MazeDimensions.Height">
+            <summary>
+            Maze Height
+            </summary>
+        </member>
+        <member name="P:TrustPilot.CodeChallenge.API.Constants.MazeDimensions.Width">
+            <summary>
+            Maze Width
+            </summary>
+        </member>
+        <member name="T:TrustPilot.CodeChallenge.API.Controllers.V1.PonyMazeController">
+            <summary>
+            Api Controller for Pony (P) in a maze that user is trying to escape it
+            from Domokun (D) and help it to reach the end-point (E)
+            </summary>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Controllers.V1.PonyMazeController.#ctor(TrustPilot.CodeChallenge.Services.Interfaces.IMazeManager,Microsoft.Extensions.Logging.ILogger{TrustPilot.CodeChallenge.API.Controllers.V1.PonyMazeController})">
+            <summary>
+            Constrcutor of the Pony Maze Controller
+            </summary>
+            <param name="mazeManager"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Controllers.V1.PonyMazeController.CreateMaze(TrustPilot.CodeChallenge.Models.CreateMazeRequest)">
+            <summary>
+            This end-point is for creating a maze with dimention between 15 and 25
+            With a valid Pony Name <see href="https://github.com/csmichaelkamal/TrustPilot.CodeChallenge"/>
+            </summary>
+            <returns>Maze Id (GUID) as string</returns>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Controllers.V1.PonyMazeController.GetMazeById(System.String)">
+            <summary>
+            Get a maze by <paramref name="mazeId"/>
+            </summary>
+            <param name="mazeId"></param>
+            <returns>Maze Properties like: maze structure, current Pony's location (P)
+            Domokun's location (D) and the End-Point Location (E).
+            The location is the number of cells from the beginging till the location itself.
+            For Example: if the Pony's location is 121 and the Maze Dimention is 15 * 25, then
+            to get the location, you should divide 121 / 15 (Maze's width) = 8.066666
+            then you need to subtract the number before the decimal point, so it will be 0.066666
+            then you need to multiply it with the maze width (15) = 1
+            finally, the Pony' location is in the 9th row and the 2nd column ((.0666666 * 15) + 1)
+            </returns>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Controllers.V1.PonyMazeController.MovePony(System.String,TrustPilot.CodeChallenge.Models.MovePonyRequest)">
+            <summary>
+            Use this API to move th Pony to any of the four directions, north, east, south or west.
+            Also, you must provide the <paramref name="mazeId"/>
+            </summary>
+            <param name="mazeId"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Controllers.V1.PonyMazeController.PrintMaze(System.String)">
+            <summary>
+            Use this API to print the current state of the maze, with the location of the Pony, 
+            the Domokun and the End-Point (Target)
+            </summary>
+            <param name="mazeId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TrustPilot.CodeChallenge.API.Extensions.MiddlewaresExtesions">
+            <summary>
+            Middleware extensions for readability
+            </summary>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Extensions.MiddlewaresExtesions.UseGlobalExceptionHandling(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TrustPilot.CodeChallenge.API.Middlewares.GlobalExceptionHandling">
+            <summary>
+            Middleware to handle global exceptions
+            </summary>
+        </member>
+        <member name="F:TrustPilot.CodeChallenge.API.Middlewares.GlobalExceptionHandling._next">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Middlewares.GlobalExceptionHandling.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Middlewares.GlobalExceptionHandling.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TrustPilot.CodeChallenge.API.Program">
+            <summary>
+            Application Main Entry
+            </summary>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Program.Main(System.String[])">
+            <summary>
+            The method that will be called by the runtime as the entry point to the application
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Create the host that will serve the entire app.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TrustPilot.CodeChallenge.API.Startup">
+            <summary>
+            Startup class for configuring the Services and the Request Pipeline
+            </summary>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor of the Startup class
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:TrustPilot.CodeChallenge.API.Startup.Configuration">
+            <summary>
+            Configuration for the application from variant sources
+            </summary>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure the Services in the .Net Core DI container
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:TrustPilot.CodeChallenge.API.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configure the Asp.Net Core Request Pipeline, the order matters
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
